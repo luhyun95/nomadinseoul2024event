@@ -1,0 +1,312 @@
+
+/* Added media query for smaller screens (mobile) */
+@media only screen and (max-width: 600px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 32px;
+    padding-top: 10px;
+  }
+
+  .content-box {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  #input-form {
+    width: 100vw;
+    max-width: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+  }
+
+  #data-input {
+    width: calc(100% - 20px);
+  }
+
+  .content-box {
+    transform: translate(-50%, -50%) scale(1.1); /* Adjust the scale value as needed */
+    padding-top:20px;
+    align-items: center;
+  }
+
+  .content-box * {
+    transform: scale(1.0); /* Inverse of the scale value for child elements */
+  }
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://cdn.discordapp.com/attachments/1106143957064355923/1189094226017931304/nomadjung_new_year_seoul_tower_with_fireworks_illustration_ghib_2f08b5c6-c054-4db6-a2fb-0dcd8a4b485c.webp?ex=659ce94b&is=658a744b&hm=e7754de2672ff3985230af24&'); /* Replace with the path to your image */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  height: 100vh; /* 100% of the viewport height */
+  overflow: hidden; /* Prevent scrolling if the content is larger than the viewport */
+  background-color: rgba(242, 92, 84, 0.7); /* Adjust the alpha value (0.7 in this example) */
+
+}
+
+
+h1 {
+    font-size: 54px;
+    color: #F25C54;
+    font-family: 'circular', Arial, sans-serif;
+    align-content:center;
+  text-align: center;
+  padding-top: 50px;
+}
+
+p {
+    font-size: 15px;
+    color: white;
+    font-family: 'circular', Arial, sans-serif;
+    align-content:center;
+  text-align: center;
+} 
+
+#title {
+    font-size: 54px;
+    color: #F25C54;
+    font-family: 'circular', Arial, sans-serif;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+@font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'circular';
+    src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'circular';
+    src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+}
+
+#bubble-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(242, 92, 84, 0.5); /* #F25C54 with 50% transparency */
+    width: 150px; /* Three times bigger than before */
+    height: 150px; /* Three times bigger than before */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatUp 10s infinite linear;
+  }
+
+  @keyframes floatUp {
+      from {
+          transform: translateY(100vh);
+      }
+      to {
+          transform: translateY(-100vh);
+      }
+  }
+
+
+.content-box {
+  width: 300px;
+  height: 400px;
+  background-color: #333;
+  border-radius: 50px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  display: none; /* Initially hide the content box */
+}
+
+.content-box.visible {
+  display: block; /* Show the content box when it has the "visible" class */
+}
+
+.data-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.join-button {
+  background-color: #4285f4;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+@keyframes fireworks {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.firework {
+  width: 10px;
+  height: 10px;
+  background-color: #F25C54;
+  border-radius: 50%;
+  position: absolute;
+  animation: fireworks 1s ease-in-out;
+  z-index: 10001; /* Adjust the z-index value */
+}
+
+
+.message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  z-index: 10000;
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay color with 50% opacity */
+  z-index: 10000; /* Adjust the z-index value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color for the message */
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+
+
+.bubble-text {
+    font-size: 15px;
+    color: white;
+}
+
+#input-form {
+    position: absolute;
+    width: 70%; /* Set width to 70% for mobile */
+    max-width: 350px; /* Set max-width to 300px for larger screens */
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex; /* Set the form to flex 
+container */
+    align-items: center; /* Center items vertically */
+  
+}
+
+#data-input {
+  width: 100%; /* Set width to 100% initially */
+  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 10px; /* Add padding for better styling */
+  margin: 10px; /* Add margin for spacing between input and button */
+  margin-bottom: 0;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 50px;
+    border-color: white;
+    font-family: 'circular', Arial, sans-serif;
+    transition: border-color 0.3s ease; /* Add transition for a smooth effect */
+}
+
+#data-input:hover,
+#data-input:focus,
+#data-input.typing {
+    border-color: #F25C54;
+}
+
+#input-form:hover,
+#input-form:focus,
+#input-form.typing {
+    border-color: #F25C54;
+}
+
+button, .icon-button {
+  padding: 10px;
+  margin-top: 10px; /* Match the margin-top of the data input */
+  font-size: 18px;
+  color: white;
+  background: #F25C54;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'circular', Arial, sans-serif;
+  position: relative;
+  width: auto; /* Set the width to auto */
+  display: flex;
+  align-items: center; /* Center the content horizontally */
+}
+
+.logo {
+  width: 30px; /* Adjust the width of your logo */
+  height: 30px; /* Adjust the height of your logo */
+  display: block;
+}
+
+.text {
+  font-size: 18px;
+  color: white;
+  margin-left: 8px; /* Add some margin to separate text from logo */
+  display: none;
+}
+
+button:hover {
+    background-color: #E1493E;
+}
+
+button:hover .logo {
+  display: none;
+}
+
+button:hover .text {
+  display: block;
+}
+
+
+
