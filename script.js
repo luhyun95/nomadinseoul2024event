@@ -9,13 +9,21 @@ document.addEventListener("DOMContentLoaded", function() {
     // Simulated database with random data
     const database = [
         "새해에는 돈 아주 아주 많이 벌게 해주세요",
-        "Random Text",
-        "Data Entry",
-        "Database Record",
-        "Web Development",
-        "Bubble Animation"
+        "집 사고 싶습니다",
+        "노마드가 되는 게 꿈이에요",
+        "매일 5시 30분 기상하기",
+        "요가 자격증 따기",
+        "직장 생활이 좀 더 평화로웠으면",
+        "주식 대박나면 좋겠어요",
+        "책 100권 읽기",
+        "여자친구 생기게 해주세요",
+        "살 20kg 빼기, 운동 매일",
+        "부수입 50만원 만들기",
+        "글쓰기 시작하기",
+        "매일 하루 한 번 명상하기",
+        "건강해졌으면 좋겠습니다",
     ];
-  
+
     // Function to create a bubble element with random data
   // Function to create a bubble element with random data
   function createBubble() {
@@ -145,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Attach input event listener to handle keyboard visibility
       inputField.addEventListener("input", handleKeyboardVisibility);
       // Attach scroll event listener to reset screen scroll position
-      window.addEventListener("scroll", resetScrollPosition);  
+      window.addEventListener("scroll", resetScrollPosition);
 
 
   //SUBMIT
